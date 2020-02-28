@@ -36,6 +36,7 @@ class BitReader {
     DCHECK_LE(num_bits, sizeof(T) * 8);
     uint64_t temp;
     bool ret = ReadBitsInternal(num_bits, &temp);
+    LOG(WARNING) << "Bits : " << temp; 
     *out = static_cast<T>(temp);
     return ret;
   }
