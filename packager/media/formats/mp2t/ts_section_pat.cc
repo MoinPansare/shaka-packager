@@ -47,6 +47,9 @@ bool TsSectionPat::ParsePsiSection(BitReader* bit_reader) {
   RCHECK(bit_reader->ReadBits(1, &current_next_indicator));
   RCHECK(bit_reader->ReadBits(8, &section_number));
   RCHECK(bit_reader->ReadBits(8, &last_section_number));
+  
+  DVLOG(1) << "Printing Value for Section Length : " << section_length;
+
   section_length -= 5;
 
   // Perform a few verifications:
