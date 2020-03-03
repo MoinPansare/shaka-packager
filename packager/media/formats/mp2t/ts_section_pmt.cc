@@ -88,6 +88,8 @@ bool TsSectionPmt::ParsePsiSection(BitReader* bit_reader) {
     RCHECK(bit_reader->ReadBits(4, &reserved));
     RCHECK(bit_reader->ReadBits(12, &es_info_length));
 
+  LOG(WARNING) << "Printing Value for Stream Type : " << stream_type;
+
     // Do not register the PID right away.
     // Wait for the end of the section to be fully parsed
     // to make sure there is no error.
