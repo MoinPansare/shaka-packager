@@ -204,6 +204,10 @@ bool UdpFile::Open() {
     if (options->is_source_specific_multicast()) {
       struct ip_mreq_source source_multicast_group;
 
+      DVLOG(1) << "Interface : " << options->interface_address()
+      DVLOG(1) << "Source : " << options->source_address()
+
+
       source_multicast_group.imr_multiaddr = local_in_addr;
       if (inet_pton(AF_INET,
                     options->interface_address().c_str(),
