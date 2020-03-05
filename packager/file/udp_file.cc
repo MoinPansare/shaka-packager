@@ -85,8 +85,10 @@ int64_t UdpFile::Read(void* buffer, uint64_t length) {
   do {
     result =
         recvfrom(socket_, reinterpret_cast<char*>(buffer), length, 0, NULL, 0);
+        LOG(INFO) << "\n\n\nPrinting buffer : \n\n" << buffer;
+        Log(INFO) << "Length : " << strlen(buffer);
   } while (result == -1 && GetSocketErrorCode() == EINTR_CODE);
-
+  //Moin
   return result;
 }
 
