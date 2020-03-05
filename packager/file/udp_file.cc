@@ -206,6 +206,10 @@ bool UdpFile::Open() {
 
       LOG(INFO) << "Interface : " << options->interface_address();
       LOG(INFO) << "Source : " << options->source_address();
+      LOG(INFO) << "address : " << options->address();
+      LOG(INFO) << "port : " << options->port();
+      LOG(INFO) << "is_source_specific_multicast : " << options->is_source_specific_multicast();
+      LOG(INFO) << "buffer_size : " << options->buffer_size();
 
 
       source_multicast_group.imr_multiaddr = local_in_addr;
